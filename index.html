@@ -1,0 +1,42 @@
+  <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investidor Fix: Simulação de Renda Fixa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Investidor Fix 📊</h1>
+        <div id="status-panel">
+            <p>Mês: <span id="mes">1</span> de 12</p>
+            <p>Saldo Atual: R$ <span id="saldo">10.000,00</span></p>
+            <p>Meta: R$ <span id="meta">11.500,00</span></p>
+        </div>
+
+        <div id="escolhas">
+            <h2>Decisão de Investimento</h2>
+            <div class="card" data-tipo="CDB">
+                <h3>CDB Pós-Fixado (100% CDI)</h3>
+                <p>Baixo Risco, Alta Liquidez Diária.</p>
+                <button onclick="investir('CDB')">Investir</button>
+            </div>
+            <div class="card" data-tipo="Tesouro">
+                <h3>Tesouro Prefixado (12% a.a.)</h3>
+                <p>Baixo Risco, Rentabilidade Fixa.</p>
+                <button onclick="investir('Tesouro')">Investir</button>
+            </div>
+            </div>
+
+        <div id="resultado" style="display: none;">
+            <h2>Resultados do Mês</h2>
+            <p id="mensagem"></p>
+            <button onclick="proximoMes()">Próximo Mês</button>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+  
