@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f7f9;
+    background-color: #f4f4f9;
     color: #333;
     display: flex;
     justify-content: center;
@@ -10,66 +10,88 @@ body {
 }
 
 .container {
-    background-color: #ffffff;
+    background: #fff;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 90%;
     max-width: 600px;
+    text-align: center;
 }
 
 h1 {
-    text-align: center;
     color: #007bff;
+    margin-bottom: 20px;
 }
 
-#status-panel {
-    background-color: #e9ecef;
+.placar, .game-area, .resultado-area, .fim-de-jogo {
+    border: 1px solid #ccc;
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 8px;
 }
 
-#status-panel p {
+.placar p {
     margin: 5px 0;
     font-size: 1.1em;
-}
-
-#status-panel span {
     font-weight: bold;
-    color: #28a745; /* Cor para o dinheiro */
 }
 
-#escolhas {
+.input-grupo {
+    margin: 15px 0;
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.card {
-    border: 1px solid #ccc;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+.input-grupo label {
+    flex: 1;
+    text-align: left;
+    margin-right: 10px;
 }
 
-.card h3 {
-    margin-top: 0;
-    color: #0056b3;
+.input-grupo input {
+    flex: 2;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100px; /* Ajuste para melhor visualização */
+    text-align: center;
 }
 
 button {
-    background-color: #007bff;
+    background-color: #28a745;
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 1em;
     margin-top: 10px;
-    width: 100%;
     transition: background-color 0.3s;
+    width: 100%;
 }
 
-button:hover {
-    background-color: #0056b3;
+button:hover:not(:disabled) {
+    background-color: #218838;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Estilos de cor para o resultado */
+.ganho {
+    color: green;
+    font-weight: bold;
+}
+
+.perda {
+    color: red;
+    font-weight: bold;
 }

@@ -1,42 +1,50 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Investidor Fix: Simulação de Renda Fixa</title>
+    <title>O Desafio do Investidor</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Investidor Fix 📊</h1>
-        <div id="status-panel">
-            <p>Mês: <span id="mes">1</span> de 12</p>
-            <p>Saldo Atual: R$ <span id="saldo">10.000,00</span></p>
-            <p>Meta: R$ <span id="meta">11.500,00</span></p>
+        <h1>💰 O Desafio do Investidor 📈</h1>
+        <div class="placar">
+            <p>Capital Atual: R$ <span id="capital">10000.00</span></p>
+            <p>Rodada: <span id="rodada">1</span> de 10</p>
+            <p>Alocação Atual: <span id="alocacao">0% Fixo | 0% Variável</span></p>
         </div>
 
-        <div id="escolhas">
-            <h2>Decisão de Investimento</h2>
-            <div class="card" data-tipo="CDB">
-                <h3>CDB Pós-Fixado (100% CDI)</h3>
-                <p>Baixo Risco, Alta Liquidez Diária.</p>
-                <button onclick="investir('CDB')">Investir</button>
+        <div class="game-area">
+            <h2>Decisão de Investimento (Rodada <span id="rodada-titulo">1</span>)</h2>
+            <p class="instrucao">Alque seu capital para a próxima rodada (Total: 100%):</p>
+            
+            <div class="input-grupo">
+                <label for="fixa-input">Renda Fixa (%):</label>
+                <input type="number" id="fixa-input" value="50" min="0" max="100">
             </div>
-            <div class="card" data-tipo="Tesouro">
-                <h3>Tesouro Prefixado (12% a.a.)</h3>
-                <p>Baixo Risco, Rentabilidade Fixa.</p>
-                <button onclick="investir('Tesouro')">Investir</button>
-            </div>
+            
+            <div class="input-grupo">
+                <label for="variavel-input">Renda Variável (%):</label>
+                <input type="number" id="variavel-input" value="50" min="0" max="100">
             </div>
 
-        <div id="resultado" style="display: none;">
-            <h2>Resultados do Mês</h2>
-            <p id="mensagem"></p>
-            <button onclick="proximoMes()">Próximo Mês</button>
+            <button id="investir-btn" disabled>Investir e Avançar Rodada</button>
         </div>
 
+        <div class="resultado-area hidden">
+            <h2>Resultado da Rodada</h2>
+            <p id="resultado-texto"></p>
+            <button id="proxima-rodada-btn" class="hidden">Avançar</button>
+        </div>
+
+        <div class="fim-de-jogo hidden">
+            <h2>Fim do Jogo!</h2>
+            <p id="mensagem-final"></p>
+            <button id="reiniciar-btn">Jogar Novamente</button>
+        </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
-  
